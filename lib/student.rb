@@ -24,20 +24,10 @@ class Student
   end
 
   def self.create(hash)
-    # sql = <<-SQL
-    #   INSERT INTO students (name, grade) VALUES (?, ?)
-    # SQL
-
-    # DB[:conn].execute(sql, hash[:name], hash[:grade])
-    # sql_lookup = <<-SQL
-    #   SELECT * FROM students ORDER BY id DESC LIMIT 1
-    # SQL
-    # info = DB[:conn].execute(sql_lookup)[0]
     student = Student.new(hash[:name], hash[:grade])
     student.save
     student
-    # binding.pry
-    # puts 'nope'
+
   end
 
   def self.drop_table
